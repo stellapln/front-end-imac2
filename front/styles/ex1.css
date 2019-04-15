@@ -1,0 +1,43 @@
+* {
+	padding:0px
+	margin:0px;
+	font-family:arial;
+}
+
+.container {
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:flex-start;
+	align-content:flex-start;
+	flex-wrap: wrap;
+}
+.face, .line{
+	text-align:center;
+	display:flex;
+	justify-content:space-around;
+	align-items:flex-start;
+	align-content:space-between;
+	flex-wrap: wrap;
+}
+.face {
+	border:1px solid silver;
+	height:80px;
+	width:100px;
+	border-radius:5px;
+	margin:10px;
+	padding:10px 0px;
+}
+.line {
+	width:100%;
+	
+}
+.point, .empty {
+	height:20px;
+	width:20px;
+	margin:0px 10px;
+	border-radius:20px;
+}
+.point {
+	background-color:black;
+}
