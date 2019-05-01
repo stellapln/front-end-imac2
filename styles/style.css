@@ -2,11 +2,12 @@ body {
 	background-color: black;
 	color: white;
     font-family: arial; 
+    overflow : scroll;
 }
 
 .big-block {
-	border:3px solid #000000;
-	margin: 3%;
+	border: 1px solid #000000;
+	margin: 1%;
 	padding: 1%;
     box-shadow: 0px 0px 5px 2px #154360;
     border-radius: 5%;
@@ -30,7 +31,7 @@ body {
 }
 
 .small-blocks {
-	display:grid;
+	display: grid;
     justify-content: space-around;
     align-items: center;
 }
@@ -57,8 +58,8 @@ body {
 }
 
 .img-map {
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
 }
 
 /* Progresss bar stuff */
@@ -183,7 +184,7 @@ setInterval(function(){ modifValues(); },40);*/
 /* Sections bars */
 
 /* Container for sections bars */
-.container-section, .container {
+.container-section {
   width: 100%; /* Full width */
 }
 
@@ -226,63 +227,21 @@ p {
 	font-size: 15px;
 }
 
-a {
-	text-decoration: none;
-	font-size: 15px;
-}
-	a:hover {
-		text-decoration: underline;
-	}
-
-h1, h2, p, a, span{
-	color: #fff;
-}
-    
-.titular {
-    display: block;
-    line-height: 60px;
-    margin: 0;
-    text-align: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+span{
+	color: #28AB65;
 }
 
 .block {
-    margin: 25px 25px 0 0;
-    border-radius: 10px;
+    margin: 25px 25px 25px 25px;
     float: left;
-    width: 300px;
-    overflow: hidden;
-}
-
-.menu-box {
-    height: 360px;
 }
 
 .line-chart {
-    height: 200px;
-    background: #11a8ab;
-}
-
-.year-data {
-    padding-top: 28px;
-    padding-bottom: 18px;
-    background-color: #2471A3;
-}
-.year-data p {
-    display: inline-block;
-    margin: 0;
-    padding: 0 25px 15px;            
-    font-size: 16px;
-}
-.year-data p:last-child {
-    padding: 0 25px;
-    float: right;
-    font-size: 15px;
+    height: 100%;
 }
 
 .grafico {
-    padding: 2rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem; 
     width: 100%;
     height: 100%;
     position: relative;
@@ -290,74 +249,63 @@ h1, h2, p, a, span{
     background-color: #154360;
     font-size: 80%;
 }
+
 .grafico span {
     display: block;
     position: absolute;
-    bottom: 3rem;
-    left: 2rem;
-    height: 0;
+    bottom: 2.5rem;
+    left: 6em;
     border-top: 2px solid;
     transform-origin: left center;
 }
+
 .grafico span > span {
     left: 100%; bottom: 0;
 }
 
-[data-valor='25'] {width: 75px; transform: rotate(-45deg);}
-[data-valor='8'] {width: 24px; transform: rotate(65deg);}
-[data-valor='13'] {width: 39px; transform: rotate(-45deg);}
-[data-valor='5'] {width: 15px; transform: rotate(50deg);}
-[data-valor='23'] {width: 69px; transform: rotate(-70deg);}
-[data-valor='12'] {width: 36px; transform: rotate(75deg);}
-[data-valor='15'] {width: 45px; transform: rotate(-45deg);}
-  
-[data-valor]:before {
-    content: '';
-    position: absolute;
-    display: block;
-    right: -4px;
-    bottom: -3px;
-    padding: 4px;
-    background: #fff;
-    border-radius: 50%;
-}
-[data-valor='23']:after {
-    content: '+' attr(data-valor) '%';
-    position: absolute;
-    right: -2.7rem;
-    top: -1.7rem;
-    padding: .3rem .5rem;
-    background: #50597B;
-    border-radius: .5rem;
-    transform: rotate(45deg);  
-}
+[data-valor='25'] {width: 75px; transform: rotate(-30deg);}
+[data-valor='8'] {width: 24px; transform: rotate(50deg);}
+[data-valor='13'] {width: 39px; transform: rotate(-30deg);}
+[data-valor='5'] {width: 15px; transform: rotate(40deg);}
+[data-valor='23'] {width: 69px; transform: rotate(-50deg);}
+[data-valor='12'] {width: 36px; transform: rotate(50deg);}
+[data-valor='15'] {width: 45px; transform: rotate(-10deg);}
+[data-valor='56'] {width: 45px; transform: rotate(-50deg);}
+
 [class^='eje-'] {
-    position: absolute;
     left: 0;
     bottom: 0rem;
     width: 100%;
     padding: 1rem 1rem 0 2rem;
-    height: 80%;
+    height: 50%;
 }
+
 .eje-x {
-    height: 2.5rem;
-}
-.eje-y li {
-    height: 25%;
-    border-top: 1px solid #2471A3;
-}
-[data-ejeY]:before {
-    content: attr(data-ejeY);
-    display: inline-block;
-    width: 2rem;
-    text-align: right;
-    line-height: 0;
-    position: relative;
-    left: -2.5rem;
-    top: -.5rem;
-} 
-.eje-x li {
-    width: 33%;
-    float: left;
+    column-count: 15;
     text-align: center;
+    display: inline-flex;
+    padding-top: 12%;
+    padding-right: 12%;
+}
+
+.eje-x li {
+    height: 100%;
+    width: 100%;
+    float: left;
+    text-align: center;    
+    transform: rotate(-35deg);
+}
+  
+/* Donuts charts */
+
+.donuts {
+  width: 300px;
+  height: 300px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #28AB65 linear-gradient(to right, #642F88 50%, #28AB65 50%);
+  border-radius: 50%;
 }
