@@ -227,7 +227,7 @@ p {
 	font-size: 15px;
 }
 
-span{
+.grafico span{
 	color: #28AB65;
 }
 
@@ -246,7 +246,7 @@ span{
     height: 100%;
     position: relative;
     color: #fff;
-    background-color: #154360;
+    background-color: #202021;
     font-size: 80%;
 }
 
@@ -299,8 +299,8 @@ span{
 /* Donuts charts */
 
 .donuts {
-  width: 300px;
-  height: 300px;
+  width: 10rem;
+  height: 10rem;
   top: 0;
   right: 0;
   bottom: 0;
@@ -309,3 +309,58 @@ span{
   background: #28AB65 linear-gradient(to right, #642F88 50%, #28AB65 50%);
   border-radius: 50%;
 }
+
+.legend {
+    width: 5%;
+    height: 10%;
+}
+
+.legend p {
+    color: white;
+    font-size: 10px;
+    margin: 0 0 0 -1.5rem;
+}
+
+.green-square {
+    background-color: #28AB65;
+    margin-left: 75%;
+    margin-bottom: 12%;
+}
+
+.local-danger {
+    display: inline-flex;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.local-danger p {
+    font-size: 10px;
+    text-align: right;
+    width: inherit;
+    margin-left: 40%;
+}
+
+span.local-danger-title{
+    font-size: 30px;
+}
+
+span.local-danger-pourcent{
+    font-size: 40px;
+    text-align: center;
+}
+
+.sexual-abuse, .car-accident {
+    display: inline-grid;
+    width: 40%;
+    height: 40%;
+    background-color: #202021;
+    margin: auto;
+    padding: 2% 0% 2% 2%;
+}
+
+.grafico, .sexual-abuse, .car-accident {
+    border-radius: 5%;
+
+}
+
+/* pour charts, donuts and graph with js : https://codepen.io/ejsado/pen/HLgzK */
