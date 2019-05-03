@@ -6,9 +6,6 @@
 	</head>
 	<body>
         <div class="both-column">
-            <div class="title">
-                <h1>Indice d'insécurité local</h1>
-            </div>
             <div id="progress">
                 <p>Retrieving data...<strong>0%</strong></p>
                 <progress value="5" min="0" max="100">0%<span></span>
@@ -17,9 +14,14 @@
             </div>
             <div class="container">
                 <div class="big-block" id="left-block">
+                    <div class="title">
+                        <h1>Indice d'insécurité local</h1>
+                    </div>
                     <div class="input-research" >
-                        <input type="text" id="search-bar" placeholder="Location in France"/>
-                        <img src="assets/search.png" id="search-icon"/>
+                        <input type="text" id="search-bar" placeholder="Ville, lieu..."/>
+                        <button name="research-button" onclick="research()">
+                           <!-- <img src="assets/search.png" id="search-icon"/> <img /> -->
+                        </button>      
                     </div>
                     <div class="small-blocks">
                         <div class="small-block block-img">
@@ -63,6 +65,7 @@
                 </div>
                 <div class="big-block" id="right-block">
                     <div class="small-blocks">
+                        <h2 class="danger-locaux">Danger locaux</h2>
                         <div class="small-block local-danger">
                             <div class="sexual-abuse">
                                 <span class="local-danger-title">Agression sexuelle sur mineur</span>
@@ -78,10 +81,12 @@
                                         rapport à la moyenne française.</p>
                             </div>
                         </div>
+                        <h2 class="danger-periode">Danger par période</h2>
                         <div class="small-block line-chart-block block">
                             <div class="line-chart">
                             <div class='grafico'>
                                 <p>Évolution du nombre d’infractions / délits / crimes </p>
+                                <span class="purple-square legend"><p>France</p></span>
                                 <span class="green-square legend"><p>Ville</p></span>
                                 <ul class='eje-x'>
                                     <li>1995</li>
