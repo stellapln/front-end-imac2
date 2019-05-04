@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+    background: black;
 	color: white;
     font-family: arial; 
     overflow : scroll;
@@ -11,22 +11,8 @@ body {
     text-align: -webkit-left;
 }
 
-.big-block {
-	border: 1px solid #000000;
-	margin: 1%;
-	padding: 1%;
-    box-shadow: 0px 0px 5px 2px #154360;
-    border-radius: 10px;
-    flex: 2;
-}
-
 .both-column {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
 .container{
@@ -82,125 +68,6 @@ input {
     height: 30%;
 }
 
-/* Progresss bar stuff */
-
-#progress {
-    width: 300px;
-    margin: auto;
-}
-
-progress{
-    display: inline-block;
-    -moz-box-sizing: border-box;
-         box-sizing: border-box;
-    width: 300px;
-    height: 20px;
-    padding: 3px 3px 2px 3px;
-    background: blue; 
-    background: -webkit-linear-gradient(#2d2d2d,#444);
-    background:    -moz-linear-gradient(#2d2d2d,#444);
-    background:      -o-linear-gradient(#2d2d2d,#444);
-    background:         linear-gradient(#2d2d2d,#444);
-    border: 1px solid #154360;
-    border-radius: 15px;
-    box-shadow: 0 1px 0 #154360;   
-}
-
-/* Bar Style for Chrome */
-progress::-webkit-progress-value{
-    border-radius:10px;
-    background: #09c;
-    background: 
-      -moz-repeating-linear-gradient(
-        45deg, 
-        rgba(255,255,255,.2) 0,
-        rgba(255,255,255,.2) 10px, 
-        rgba(255,255,255,0) 10px,
-        rgba(255,255,255,0) 20px
-      ),
-      -moz-linear-gradient(
-        rgba(255,255,255,.1) 50%,
-        rgba(255,255,255,0) 60%
-      ),
-      #09c;
-    background: 
-      repeating-linear-gradient(
-        45deg, 
-        rgba(255,255,255,.2) 0,
-        rgba(255,255,255,.2) 10px, 
-        rgba(255,255,255,0) 10px,
-        rgba(255,255,255,0) 20px
-      ),
-      linear-gradient(
-        rgba(255,255,255,.1) 50%,
-        rgba(255,255,255,0) 60%
-      ),
-      #09c;
-    background-size: 300px 20px, auto, auto;
-    background-position: -300px 0, top, top;
-    background-position: top right, top, top;
-    box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 
-                0 -1px 0 rgba(0,0,0,.8) inset,
-                0 0 2px black;
-  
-}
-
-/* Remove background color */
-progress::-webkit-progress-bar{
-    background: transparent;
-}
-
-/*Animation bar*/
-progress[value='100'] span{
-    width: 100%;
-}
-progress[value^='9']:not([value^='9.']):not([value='9']) span{
-    width: 95%;
-}
-progress[value^='8']:not([value^='8.']):not([value='8']) span{
-    width: 85%;
-}
-progress[value^='7']:not([value^='7.']):not([value='7']) span{
-    width: 75%;
-}
-progress[value^='6']:not([value^='6.']):not([value='6']) span{
-    width: 65%;
-}
-progress[value^='5']:not([value^='5.']):not([value='5']) span{
-    width: 55%;
-}
-progress[value^='4']:not([value^='4.']):not([value='4']) span{
-    width: 45%;
-}
-progress[value^='3']:not([value^='3.']):not([value='3']) span{
-    width: 35%;
-}
-progress[value^='2']:not([value^='2.']):not([value='2']) span{
-    width: 25%;
-}
-progress[value^='1']:not([value^='1.']):not([value='1']):not([value='100']) span{
-    width: 15%;
-}
-
-progress span{
-    -webkit-transition: width 1.6s linear;
-        -moz-transition: width 1.6s linear;
-          -o-transition: width 1.6s linear;
-             transition: width 1.6s linear;
-}
-
-/* add in js file */
-/*function modifValues(){
-    var val = $('#progress progress').attr('value');
-    if(val>=100){val=5;}
-    var newVal = val*1+0.25;
-    var txt = Math.floor(newVal)+'%';      
-      
-    $('#progress progress').attr('value',newVal).text(txt);
-    $('#progress strong').html(txt);
-}
-setInterval(function(){ modifValues(); },40);*/
-
 /* Sections bars */
 
 /* Container for sections bars */
@@ -226,7 +93,6 @@ setInterval(function(){ modifValues(); },40);*/
 
 /* Graph stuff */
 
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -311,17 +177,62 @@ p {
   
 /* Donuts charts */
 
-.donuts {
-  width: 10rem;
-  height: 10rem;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  background: #28AB65 linear-gradient(to right, #642F88 50%, #28AB65 50%);
-  border-radius: 50%;
+.donut-chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    border-radius: 100%
 }
+p.center-date {
+	background-color: black;
+    position: absolute;
+    text-align: center;
+    top:0;left:0;bottom:0;right:0;
+    width: 75%;
+    height: 75%;
+    margin: auto;
+    border-radius: 50%;
+    padding: 15% 0 0;
+}
+
+.block {
+    float: right;
+}
+
+span.scnd-font-color {
+    line-height: 0;  
+}
+.pourcent {
+    border-radius: 50%;
+    /* clip: rect(0px, 200px, 200px, 100px); */
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.part {
+    border-radius: 50%; 
+    clip: rect(0px, 100px, 200px, 0px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+#portion1 {
+    transform: rotate(0deg);
+}
+#portion1 .part {
+    background-color: #642F88;
+    transform: rotate(40deg);
+}
+#portion2 {
+    transform: rotate(80deg);
+}
+#portion2 .part {
+    background-color: #28AB65;
+    transform: rotate(140deg);
+}  
+
+/* Graphic */
 
 .legend {
     width: 5%;
@@ -390,3 +301,5 @@ span.local-danger-pourcent {
 }
 
 /* pour charts, donuts and graph with js : https://codepen.io/ejsado/pen/HLgzK */
+
+
