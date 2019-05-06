@@ -5,7 +5,7 @@ const config = {
     host: '127.0.0.1',
     user: 'baptiste',
     password: 'grisous55',
-    database: 'fly',
+    database: 'datacrime',
 };
 
 // Create a MySQL pool
