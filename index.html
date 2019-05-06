@@ -2,136 +2,59 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
+        <meta charset="utf-8"/>
 		<title>Crime France</title>
 	</head>
 	<body>
         <div class="both-column">
-            <div class="container">
+            <div class="row">
                 <div class="big-block" id="left-block">
                     <div class="title">
                         <h1>Indice d'insécurité local</h1>
                     </div>
-                    <div class="input-research" >
-                        <input type="text" id="search-bar" placeholder="Ville, lieu..."/>
-                        <button name="research-button" onclick="research()">
-                           <!-- <img src="assets/search.png" id="search-icon"/> <img /> -->
+                    <div id="input-research">
+                        <input type="text" id="search-bar" placeholder="Ville, lieu..."/><button id="research-button" onclick="research()">
+                           <img src="assets/search.png" id="search-icon"/>
                         </button>      
                     </div>
-                    <p>Atteinte à des biens publics (142 en 2014, 465 depuis 1995)</p>
-                    <div class="container-section">
-                        <div class="section meurtre">90%</div>
-                    </div>
-                      
-                    <p>Revente de stupéfiants (136 en 2014, 452 depuis 1995)</p>
-                    <div class="container-section">
-                        <div class="section viol">80%</div>
-                    </div>
-                      
-                    <p>Atteinte à des biens privés (103 en 2014, 381 depuis 1995)</p>
-                    <div class="container-section">
-                        <div class="section agression">65%</div>
-                    </div>
-                      
-                    <p>Agression à l’arme blanche (98 en 2014, 367 depuis 1995)</p>
-                    <div class="container-section">
-                        <div class="section banditisme">60%</div>
-                    </div>
-                    <div class="bar-chart-block block">
-                            <div class='grafico bar-chart'>
-                              <ul class='eje-y'>
-                                <li data-ejeY='60'></li>
-                                <li data-ejeY='45'></li>
-                                <li data-ejeY='30'></li>
-                                <li data-ejeY='15'></li>
-                                <li data-ejeY='0'></li>   
-                                 </ul>
-                                 <ul class='eje-x'>
-                                  <li>1995</li>
-                                  <li>1996</li>
-                                  <li>1997</li>
-                                  <li>1998</li>
-                                  <li>1999</li>
-                                  <li>2000</li>
-                                  <li>2001</li>
-                                  <li>2002</li>
-                                  <li>2003</li>
-                                  <li>2004</li>
-                                  <li>2005</li>
-                                  <li>2006</li>
-                                  <li>2007</li>
-                                  <li>2008</li>
-                                  <li>2009</li>
-                                  <li>2010</li>    
-                                 </ul>
-                              </div>
-                            </div>
-                          </div>
                 </div>
+                <div class="block-card">
+                    <h2>Actions illégales les plus courantes</h2>
+                    <div>
+                        <p>Atteinte à des biens publics (142 en 2014, 465 depuis 1995)</p>
+                        <div class="container-section">
+                            <div class="section meurtre">90%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="big-block" id="right-block">
                     <div class="small-blocks">
                         <h2 class="danger-locaux">Danger locaux</h2>
-                        <div class="small-block local-danger">
-                            <div class="sexual-abuse">
-                                <span class="local-danger-title">Agression sexuelle sur mineur</span>
-                                <span class="local-danger-pourcent"> + 46,3 %</span>
-                                <p class="local-danger-descr">Est plus élevée de 46.3 %
-                                        par rapport à la moyenne
-                                        française.</p>
+                        <div class="container-for-flex">
+                            <div class="big-card">
+                                <span class="big-card-title">Agression sexuelle sur mineur</span>
+                                <span class="big-card-pourcent"> + 46,3<span class="pourcent-sign">%</span></span>
+                                <p class="local-danger-descr">Est plus élevée de 46.3 % par rapport à la moyenne française.</p>
                             </div>
-                            <div class="car-accident">
-                                <span class="local-danger-title">Accident léger sur véhicule personnel</span>
-                                <span class="local-danger-pourcent"> + 13 %</span>                            
-                                <p class="local-danger-descr">Est plus élevée de 13.5 % par
-                                        rapport à la moyenne française.</p>
+                            <div class="big-card">
+                                <span class="big-card-title">Accident léger sur véhicule personnel</span>
+                                <span class="big-card-pourcent"> + 13<span class="pourcent-sign">%</span></span>                            
+                                <p class="local-danger-descr">Est plus élevée de 13.5 % par rapport à la moyenne française.</p>
                             </div>
                         </div>
                         <h2 class="danger-periode">Danger par période</h2>
                         <div class="small-block line-chart-block block">
                             <div class="line-chart">
-                            <div class='grafico'>
-                                <p>Évolution du nombre d’infractions / délits / crimes </p>
-                                <span class="purple-square legend"><p>France</p></span>
-                                <span class="green-square legend"><p>Ville</p></span>
-                                <ul class='eje-x'>
-                                    <li>1995</li>
-                                    <li>1996</li>
-                                    <li>1997</li>
-                                    <li>1998</li>
-                                    <li>1999</li>
-                                    <li>2000</li>
-                                    <li>2001</li>
-                                    <li>2002</li>
-                                    <li>2003</li>
-                                    <li>2004</li>
-                                    <li>2005</li>
-                                    <li>2006</li>
-                                    <li>2007</li>
-                                    <li>2008</li>
-                                    <li>2009</li>
-                                    <li>2010</li>
-                                    </ul>
-                                    <span data-valor='25'>
-                                    <span data-valor='8'>
-                                    <span data-valor='13'>
-                                    <span data-valor='5'>   
-                                    <span data-valor='23'>   
-                                    <span data-valor='12'>
-                                    <span data-valor='15'>
-                                    <span data-valor='15'>
-                                    <span data-valor='23'>   
-                                    <span data-valor='5'>   
-                                    <span data-valor='8'>
-                                    </span></span></span></span></span></span></span>
+                                <div class="block-card">
+                                    <p>Évolution du nombre d’infractions / délits / crimes </p>
                                 </div> 
                             </div>
                         </div>
                         <div class="small-block">
-                            <p>Risque d'agression</p>
-                            <div class="donut-chart-block block"> 
-                                <div class="donut-chart">
-                                <div id="portion1" class="pourcent"><div class="part green-data" data-rel="56"></div></div>
-                                <div id="portion2" class="pourcent"><div class="part purple-data" data-rel="44"></div></div>
-                                <p class="center-date"><span class="scnd-font-color"></span></p>        
+                            <h2>Risque d'agression</h2>
+                            <div class="donut-chart-block block">    
                             </div>
                         </div>
                     </div>

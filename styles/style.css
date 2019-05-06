@@ -1,10 +1,27 @@
+* {
+    padding:0px;
+    margin:0px;
+    font-family: arial; 
+}
+html {
+    width:100%;
+    height:100%;
+    font-size: 16px;
+}
 body {
     background: black;
 	color: white;
-    font-family: arial; 
-    overflow : scroll;
     width: 100%;
     height: 100%;
+}
+ul {
+    list-style-type: none;
+}
+h1 {
+    padding:20px;
+}
+h2 {
+    padding:10px;
 }
 
 .title {
@@ -15,11 +32,13 @@ body {
     display: flex;
 }
 
-.container{
+.row{
     flex-direction: row;
-    display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
+    flex:1;
+    margin:1%;
+    padding:1%;
 }
 
 .small-blocks {
@@ -27,34 +46,35 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-
-button {
-    background-color: white;
-    width: 10%;
-    height: 20%;
-    border: none;
-    border-radius: 10px;
-    /* background: url('../assets/search.png') no-repeat; */
+.container-for-flex {
+    display:flex;
+}
+.big-card{
+    flex:1;
+    display: inline-grid;
+    background-color: #202021;
+    padding: 15px;
+    margin:20px;
+    border-radius:5px;
 }
 
-#search-icon {
-    width: 10%;
+.big-card p {
+    font-size: 15px;
+    text-align: right;
 }
 
-input {
-    border: 2px solid #282828;
-    border-radius: 10px;
-    background-color: black;
-    text-align: justify;
-    color: white;
+span.big-card-title {
+    font-size: 30px;
 }
 
-.input-research {
-    display: flex;
-    align-items: center;
+span.big-card-pourcent {
+    font-size: 40px;
     text-align: center;
-    width: 10%;
-    height: 10%;
+    font-weight:bold;
+}
+span.big-card-pourcent .pourcent-sign{
+    font-size: 20px;
+    font-weight:normal;
 }
 
 /* Sections bars */
@@ -74,32 +94,10 @@ input {
   color: white; /* White text color */
 }
 
-.meurtre {width: 90%; background-color: #1A5276;}
-.viol {width: 80%; background-color: #1F618D;} 
-.agression {width: 65%; background-color: #2471A3;}
-.banditisme {width: 60%; background-color: #2980B9;} 
-
 
 /* Graph stuff */
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;  
-}
-
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-p {
-	font-size: 15px;
-}
-
 .block {
-    margin: 25px 25px 25px 25px;
+    margin: 25px;
     float: left;
 }
 
@@ -107,17 +105,16 @@ p {
     height: 100%;
 }
 
-.grafico {
-    padding: 1rem 1rem 1rem 1rem; 
-    width: 100%;
-    height: 100%;
-    position: relative;
-    color: #fff;
+.block-card {
+    padding: 15px; 
+    width: calc(100% - 30px);
+    color:white;
     background-color: #202021;
-    font-size: 80%;
+    border-radius:10px;
+    margin:20px 0px;
 }
 
-.grafico span {
+.block-card span {
     display: block;
     position: absolute;
     bottom: 2.5rem;
@@ -127,18 +124,9 @@ p {
     transform-origin: left center;
 }
 
-.grafico span > span {
+.block-card span > span {
     left: 100%; bottom: 0;
 }
-
-[data-valor='25'] {width: 10%; transform: rotate(-30deg);}
-[data-valor='8'] {width: 100%; transform: rotate(50deg);}
-[data-valor='13'] {width: 100%; transform: rotate(-30deg);}
-[data-valor='5'] {width: 50%; transform: rotate(40deg);}
-[data-valor='23'] {width: 100%; transform: rotate(-40deg);}
-[data-valor='12'] {width: 100%; transform: rotate(30deg);}
-[data-valor='15'] {width: 100%; transform: rotate(-20deg);}
-[data-valor='56'] {width: 100%; transform: rotate(-50deg);}
 
 [class^='eje-'] {
     left: 0;
@@ -147,32 +135,8 @@ p {
     padding: 1rem 1rem 0 2rem;
     height: 50%;
 }
-
-.eje-x {
-    column-count: 15;
-    text-align: center;
-    display: inline-flex;
-    padding-top: 12%;
-    padding-right: 12%;
-}
-
-.eje-x li {
-    height: 100%;
-    width: 100%;
-    float: left;
-    text-align: center;    
-    transform: rotate(-35deg);
-}
   
 /* Donuts charts */
-
-.donut-chart {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 2rem;
-    border-radius: 100%
-}
 p.center-date {
 	background-color: black;
     position: absolute;
@@ -186,109 +150,45 @@ p.center-date {
 }
 
 .block {
-    float: right;
+    display:block;
 }
 
 span.scnd-font-color {
     line-height: 0;  
 }
-.pourcent {
-    border-radius: 50%;
-    /* clip: rect(0px, 200px, 200px, 100px); */
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-.part {
-    border-radius: 50%; 
-    clip: rect(0px, 100px, 200px, 0px);
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-#portion1 {
-    transform: rotate(0deg);
-}
-#portion1 .part {
-    background-color: #642F88;
-    transform: rotate(40deg);
-}
-#portion2 {
-    transform: rotate(80deg);
-}
-#portion2 .part {
-    background-color: #28AB65;
-    transform: rotate(140deg);
-}  
-
-/* Graphic */
-
-.legend {
-    width: 5%;
-    height: 10%;
-}
-
-.legend p {
-    color: white;
-    font-size: 10px;
-    margin: 0 0 0 -1.5rem;
-}
-
-.green-square {
-    background-color: #28AB65;
-    margin-left: 75%;
-    margin-bottom: 12%;
-}
-
-.purple-square, span.purple-square {
-    background-color: #642F88;
-    margin-left: 75%;
-    margin-bottom: 9%;
-}
-
-.grafico span.purple-square {
-    color: #642F88;
-}
-
-.purple-square p {
-    margin: 0 0 0 -2.3rem;
-}
-
-.local-danger {
-    display: inline-flex;
-    text-decoration: none;
-    justify-content: center;
-}
-
-.local-danger p {
-    font-size: 10px;
-    text-align: right;
-    width: inherit;
-    margin-left: 40%;
-}
-
-span.local-danger-title {
-    font-size: 30px;
-}
-
-span.local-danger-pourcent {
-    font-size: 40px;
+#input-research {
+    align-items: center;
     text-align: center;
 }
-
-.sexual-abuse, .car-accident {
-    display: inline-grid;
-    width: 40%;
-    height: 40%;
-    background-color: #202021;
-    margin: auto;
-    padding: 2% 0% 2% 2%;
+#search-bar {
+    display:inline-block;
+    width:calc(100% - 60px);
+    height:30px;
+    border: 2px solid #282828;
+    border-radius: 10px 0px 0px 10px;
+    background-color: black;
+    text-align: justify;
+    color: white;
+    padding:5px;
+    font-size:1.1em;
+    vertical-align:top;
+}
+#research-button {
+    display:inline-block;
+    width:45px;
+    border-radius:0px 10px 10px 0px;
+    background-color:#282828;
+    border:none;
+    vertical-align:top;
+    height:44px;
+    text-align:center;
+}
+#search-icon {
+    height:100%;
 }
 
-.grafico, .sexual-abuse, .car-accident {
-    border-radius: 10px;
+@media screen and (max-width:800px) {
+    .both-column {
+        display:block;
+    }
 }
-
-/* pour charts, donuts and graph with js : https://codepen.io/ejsado/pen/HLgzK */
-
-
