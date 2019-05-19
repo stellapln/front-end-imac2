@@ -28,7 +28,17 @@ export default {
           console.log(data)
           actions.setCrimes({city: value, datacrime: data})
         })
+    } else {
+      return {...state, datacrime: {error: 'Veuillez entrer le nom d\'une ville'}}
     }
   },
-  setCrimes: (probs) => (state) => ({...state, city: probs.city, datacrime: probs.datacrime, autocomplete: []})
+  setCrimes: (probs) => (state) => ({...state, city: probs.city, datacrime: probs.datacrime, autocomplete: []}),
+  getTimedata: (value) => (state, actions) => {
+    fetch('http://localhost:8080/evolution/' + value)
+      .then(response => response.json())
+      .then(data => {
+        actions.setTimedata({id: value, data: data})
+      })
+  },
+  setTimedata: (probs) => (state) => ({...state, idhover: probs.id, timedata: {data: probs.data, maxtimedata: probs.data.length > 0 ? probs.data.map(obj => obj.n).reduce((acc, val) => val > acc ? val : acc) : 0}})
 }

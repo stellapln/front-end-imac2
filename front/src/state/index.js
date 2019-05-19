@@ -3,5 +3,10 @@ export default {
     value: ''
   },
   autocomplete: [],
-  datacrime: {}
+  datacrime: {},
+  idhover: 0,
+  timedata: {
+    data: [],
+    maxtimedata: 0
+  }
 }
